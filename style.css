@@ -15,6 +15,155 @@
 
 
 
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+}
+
+ul{
+ list-style-type: none ;
+}
+
+body{
+overflow-x: hidden;
+}
+
+nav {
+
+  box-shadow: 1px 1px 30px -25px #000;
+  position:fixed;
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+  background-color: #fff;
+  z-index: 111111111111111;
+  display: none;
+}
+
+.logo img{
+width: 100px;
+}
+.nav-links{
+display: flex;
+list-style: none; 
+gap: 50px;
+margin: 0;
+align-items: center;
+}
+.nav-links li a{
+text-decoration: none;
+color: #000;
+}
+.nav-links li a:hover {
+color: var(--main-color);
+}
+.nav-links li {
+position: relative;
+font-size: 1rem;
+font-weight: 600;
+
+}
+.nav-links li a::before {
+content: "";
+display: block;
+height: 3px;
+width: 0%;
+background-color: var(--main-color);
+position: absolute;
+transition: all ease-in-out 250ms;
+margin: 0 0 0 10%;
+bottom: -5px;
+}
+.nav-links li a:hover::before{
+width: 80%;
+}
+
+
+
+
+
+
+/*Styling Hamburger Icon*/
+.hamburger div{
+width: 25px;
+height:3px;
+background: #000;
+margin: 5px;
+transition: all 0.3s ease;
+}
+.hamburger{
+display: none;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 800px){
+nav{
+    position: fixed;
+    z-index: 111111;
+    width: 100%;
+    padding: 0;
+    justify-content: space-between;
+}
+.hamburger{
+    display:block;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+    transition: all 0.7s ease;
+}
+.nav-links{
+  position: fixed;
+  height: 100vh;
+  width: 60%;
+  padding: 90px 50px;
+  background-color: #fff;
+  flex-direction: column;
+  pointer-events: none;
+  text-align: end;
+  align-items: start;
+  transition: 1.5s right;
+  right: -500px;
+}
+.nav-links.open{
+   
+    pointer-events: all;
+    right: 0px;
+    
+}
+.nav-links li{
+    opacity: 0;
+}
+
+.fade:not(.show) {
+  opacity: 1;
+}
+}
+/*Animating Hamburger Icon on Click*/
+.toggle .line1{
+transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+transition: all 0.7s ease;
+width:0;
+}
+.toggle .line3{
+transform: rotate(45deg) translate(-5px,-6px);
+}
+
+.logo{
+  width: 200px;
+}
+
+
+
 body,
 html {
   margin: 0;
@@ -144,7 +293,7 @@ h1 {
 
 
 .float {
-  animation: fade-in 0.2s, fade-in 0.2s, moveclouds 7s linear infinite alternate, rotate2 4s ease-in-out infinite alternate;
+  animation: fade-in 0.2s, fade-in 0.2s, moveclouds 7s linear infinite alternate;
 
 }
 
@@ -200,6 +349,101 @@ h1 {
   color: #000;
   
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.small-box{
+
+  position: relative;
+  width: 50%;
+  margin: auto;
+  background-color: cornflowerblue;
+}
+
+
+.feature-package,.feature-product{
+  width: 40%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+
+}
+
+
+
+.feature-package{
+  width: 50%;
+  left: 50%;
+
+}
+
+.feature-package{
+z-index: 1;
+}
+
+
+
+.bg-milk{
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 53%;
+  z-index: -1;
+  transform: translate(-50%, -50%); 
+}
+
+.bg-milk-2{
+  z-index: 1;
+}
+
+.bubbles{
+  background-color: cadetblue;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    z-index: 2;
+   
+}
+
+
+
+.bubbles img{
+  width: 10%;
+  position: absolute;
+  scale:0.2;
+  animation: fade-in 1.2s, moveclouds 18s linear infinite alternate, sideWays 13s ease-in-out infinite alternate, sparky 2s linear infinite;
+
+}
+
+
+
+.bubbles img:hover, .butterflies img:hover {
+  transform: scale(1);
+  transform: translateX(-30px) translateY(-30px);
+
+}
+
+
+  
+
+
+
+
 
 
 
